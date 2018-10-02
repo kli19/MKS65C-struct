@@ -1,0 +1,13 @@
+# include <stdio.h>
+
+struct menu {char food[10]; int price;};
+
+
+int main(){
+  struct menu fiveStars;
+  fiveStars.food = "Garbage";
+  fiveStars.price = 2000000000;
+
+  printf("%s: %d\n", fiveStars.food, fiveStars.price);
+  return 0;
+}
