@@ -20,8 +20,8 @@ void replaceMenu(struct menu * aMenu, char * food, int price){
   aMenu->price = price; 
 }
 
-void modifyFood(){
-  
+void XLFood(struct menu * aMenu){
+  strcat(aMenu->food,  " XL");
 }
 
 void incrementPrice(struct menu * aMenu, int i){
@@ -40,6 +40,7 @@ int main(){
   printMenu(fiveStars);
   incrementPrice(&fiveStars, 5);
   printMenu(fiveStars);
-  
+  XLFood(&fiveStars);
+  printMenu(fiveStars);
   return 0;
 }
