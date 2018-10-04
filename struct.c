@@ -9,7 +9,6 @@ char * food[] = {"Apple Pie", "Giant 3 ton Banana", "One French Fry", "Creativit
 
 struct menu makeMenu(){
   struct menu randomMenu;
-  srand(time(NULL));
   strcpy(randomMenu.food, food[rand()%sizeof(food)/sizeof(food[0])]);
   randomMenu.price =rand(); 
   return randomMenu;
@@ -34,6 +33,8 @@ void printMenu(struct menu fiveStars){
 
 int main(){
 
+  srand(time(NULL));
+  
   struct menu fiveStars = makeMenu();
   printf("Let's look at our menu item!\n");
   printMenu(fiveStars);
