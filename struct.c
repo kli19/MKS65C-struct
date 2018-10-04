@@ -21,7 +21,7 @@ void replaceMenu(struct menu * aMenu, char * food, int price){
 }
 
 void XLFood(struct menu * aMenu){
-  strcat(aMenu->food,  " XL");
+  strcat(aMenu->food, " XL");
 }
 
 void incrementPrice(struct menu * aMenu, int i){
@@ -29,18 +29,26 @@ void incrementPrice(struct menu * aMenu, int i){
 }
 
 void printMenu(struct menu fiveStars){
-  printf("%s: $%d\n", fiveStars.food, fiveStars.price);
+  printf("%s costs $%d\n", fiveStars.food, fiveStars.price);
 }
 
 int main(){
 
   struct menu fiveStars = makeMenu();
+  printf("Let's look at our menu item!\n");
   printMenu(fiveStars);
-  replaceMenu(&fiveStars, "OOP", 0);
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("We are replacing our menu item and price!\n");
+  replaceMenu(&fiveStars, "Nothing", 0);
   printMenu(fiveStars);
-  incrementPrice(&fiveStars, 5);
-  printMenu(fiveStars);
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("Let's make this new item extra large!\n");
   XLFood(&fiveStars);
   printMenu(fiveStars);
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("Extra large means extra pricey, right?\n");
+  incrementPrice(&fiveStars, 5);
+  printMenu(fiveStars);
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   return 0;
 }
